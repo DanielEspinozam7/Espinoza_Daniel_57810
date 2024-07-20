@@ -1,0 +1,59 @@
+{% extends "entidades/index.html" %}
+
+{% block titulo %}
+<table>
+    <tr>
+        <td width="200"><h2>Producto</h2></td>
+        <td>
+            <a href="{% url 'productoForm' %}"
+            class="btn btn-primary btn-sm"><i class="fa fa-plus fa-lg" title="Crear"> </i>
+            </a>
+        </td>
+    </tr>
+</table>
+{% endblock titulo %}
+
+{% block contenido %}
+<div class="card mb-4">
+    <div class="card-header">
+        <i class="fas fa-table me-1"></i>
+        Tabla de datos
+    </div>
+    <div class="card-body">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre de Producto</th>
+                    <th>Marca</th>
+                    <th>Stock</th>
+                    <th>Precio</th>
+                    <th>Link</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for p in producto %}
+                    <tr>
+                        <td>{{ p.id }}</td>
+                        <td>{{ p.nombreProducto }}</td>
+                        <td>{{ p.marca }}</td>
+                        <td>{{ p.stock }}</td>
+                        <td>{{ p.precio }}</td>
+                        <td>{{ p.url }}</td>
+                        <td>
+                            <a href="{% url 'productoUpdate' p.id %}" class="btn btn-primary" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
+                                <i class="fa fa-edit fa-sm" title="Edit Record"></i>
+                            </a>
+                            {#% url 'cliente_delete' c.id %#}
+                            <a href="" class="btn btn-danger" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
+                                <i class="fa fa-trash fa-sm" title="Delete Record"></i>
+                            </a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock contenido %}

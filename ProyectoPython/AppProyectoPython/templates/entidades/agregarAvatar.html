@@ -1,0 +1,18 @@
+{% extends "entidades/index.html" %}
+
+{% block titulo %}
+<h1 class="mt-4">Avatar</h1>
+<ol class="breadcrumb mb-4">
+    <li class="breadcrumb-item active">página para modificar su avatar de perfil</li>
+</ol>
+{% endblock titulo %}
+
+{% block contenido %}
+<form action="" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <table>
+        {{form.as_table}}
+    </table>
+    <input type="submit" value="Actualizar Avatar">
+</form>
+{% endblock contenido %}

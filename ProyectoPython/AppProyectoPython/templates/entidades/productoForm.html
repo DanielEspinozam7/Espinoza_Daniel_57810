@@ -1,0 +1,20 @@
+{% extends "entidades/index.html" %}
+
+{% block titulo %}
+<h1 class="mt-4">Formulario para Productos</h1>
+<ol class="breadcrumb mb-4">
+    <li class="breadcrumb-item active">página para crear productos</li>
+</ol>
+{% endblock titulo %}
+
+{% block contenido %}
+<form action="" method = "post"> 
+    {#Agregamos el tag para encriptar datos de formularios#}
+    {% csrf_token %}
+    <table>
+        {# Agregamos el tag "form" para renderizarlo con DTL para ver el formulario #}
+        {{ form.as_table }}
+    </table>
+    <input type="submit" value="Guardar">
+</form>
+{% endblock contenido %}
