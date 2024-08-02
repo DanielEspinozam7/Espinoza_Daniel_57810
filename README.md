@@ -17,7 +17,6 @@ Casos de Test
 https://docs.google.com/spreadsheets/d/1QOHp3JPJYThLCu8mkxjSXGMrMpdXJ6tVX-yTa5B9ZnE/edit?usp=sharing
 
 Video explicativo
-https://youtu.be/vb9IoEiHts4
 
 Usuario
 username : admi password : dani1234
